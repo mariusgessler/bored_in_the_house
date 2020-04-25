@@ -1,0 +1,17 @@
+{
+  "name": "bored_in_the_house",
+  "version": "1.0.0",
+  "description": "Telegram bot for when you're bored in the house",
+  "main": "index.js",
+  "repository": "git@github.com:mariusgessler/bored_in_the_house.git",
+  "author": "mariusgessler <marius.gessler@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^7.14.2",
+    "node-telegram-bot-api": "^0.40.0"
+  }
+}
