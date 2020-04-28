@@ -7,12 +7,18 @@
   "author": "mariusgessler <marius.gessler@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint ./ --fix"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "firebase": "^7.14.2",
-    "node-telegram-bot-api": "^0.40.0"
+    "node-telegram-bot-api": "^0.40.n0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }
