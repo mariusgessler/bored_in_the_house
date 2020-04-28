@@ -3,7 +3,6 @@ const firebase = require('firebase');
 const axios = require('axios');
 const helpers = require('./helpers');
 
-
 firebase.initializeApp({
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
