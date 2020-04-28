@@ -26,11 +26,11 @@ bot.on('message', (msg) => {
 bot.on('callback_query', (callbackQuery) => {
   const msg = callbackQuery.message;
   if (callbackQuery.data === 'accept_activity') {
-    bot.sendMessage(msg.chat.id, "Cool, have fun! - Send me a '/bored' if you need more ideas.🙂");
+    bot.sendMessage(msg.chat.id, "Cool, enjoy! - Send me a '/bored' if you need more ideas.🙂");
   } else {
     bot.answerCallbackQuery(callbackQuery.id)
       .then(() => database.getRandomActivity())
-      .then((randomActivity) => bot.sendMessage(msg.chat.id, `Something you could do: ${randomActivity} 🤔`, {
+      .then((randomActivity) => bot.sendMessage(msg.chat.id, `${randomActivity}!`, {
         reply_markup: {
           inline_keyboard: [[
             {
