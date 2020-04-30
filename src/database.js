@@ -23,7 +23,7 @@ const getRandomActivity = () => axios.get(key)
     return activities;
   })
   .then((activities) => {
-    const randomActivity = helpers.random(activities);
+    const randomActivity = helpers.getRandom(activities);
     return randomActivity;
   });
 

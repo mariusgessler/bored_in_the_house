@@ -1,6 +1,7 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const database = require('./database');
+const helpers = require('./helpers');
 
 const bot = new TelegramBot(process.env.TOKEN, {
   polling: true,
@@ -47,9 +48,13 @@ bot.on('callback_query', (callbackQuery) => {
 });
 
 bot.onText(/\/add (.+)/, (msg, match) => {
-  const activity = match[1];
-  database.addToDatabase(activity);
-  bot.sendMessage(msg.chat.id, ` Thanks, '${activity}' will be added to our database!😎`);
+  const submittedActivity = match[1];
+  const response = helpers.validateActivity(submittedActivity);
+
+  if (response.validated) {
+    database.addToDatabase(response.activity);
+  }
+  bot.sendMessage(msg.chat.id, response.msg);
 });
 
 // eslint-disable-next-line no-console
