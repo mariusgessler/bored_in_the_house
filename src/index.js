@@ -9,7 +9,9 @@ const bot = new TelegramBot(process.env.TOKEN, {
 
 bot.on('message', (msg) => {
   const { text } = msg;
-  if (text === '/start' || text === '/bored') {
+  if (text === '/add') {
+    bot.sendMessage(msg.chat.id, 'To add a new activity type "/add the-activity-you-want-to-add"👍');
+  } else if (!/\/add (.+)/.test(text)) {
     bot.sendMessage(msg.chat.id, 'Bored?', {
       reply_markup: {
         inline_keyboard: [[
@@ -26,7 +28,7 @@ bot.on('message', (msg) => {
 bot.on('callback_query', (callbackQuery) => {
   const msg = callbackQuery.message;
   if (callbackQuery.data === 'accept_activity') {
-    bot.sendMessage(msg.chat.id, "Cool, enjoy! - Send me a '/bored' if you need more ideas.🙂");
+    bot.sendMessage(msg.chat.id, 'Cool, enjoy! - Send me a message if you need more ideas.🙂');
   } else {
     bot.answerCallbackQuery(callbackQuery.id)
       .then(() => database.getRandomActivity())
