@@ -10,7 +10,7 @@ const bot = new TelegramBot(process.env.TOKEN, {
 bot.on('message', (msg) => {
   const { text } = msg;
   if (text === '/add') {
-    bot.sendMessage(msg.chat.id, 'To add a new activity type "/add the-activity-you-want-to-add"👍');
+    bot.sendMessage(msg.chat.id, 'To add a new activity type \'/add the-activity-you-want-to-add\'👍');
   } else if (!/\/add (.+)/.test(text)) {
     bot.sendMessage(msg.chat.id, 'Bored?', {
       reply_markup: {
@@ -40,7 +40,7 @@ bot.on('callback_query', (callbackQuery) => {
               callback_data: 'decline_activity',
             },
             {
-              text: 'Sounds fun!👍',
+              text: 'Fun!👍',
               callback_data: 'accept_activity',
             },
           ]],
