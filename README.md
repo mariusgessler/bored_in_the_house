@@ -11,7 +11,6 @@ Built with:
 * _Express_ - 4.17.21
 * _Firebase_ 
 * _node-telegram-api_ - 0.40.0
-* _Contenful_
 * Hosted with _Heroku_
 
 ## Contact me
