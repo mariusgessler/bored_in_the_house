@@ -1,6 +1,6 @@
 # boredinthehouse_bot
 
-A Telegram Bot, which send users a bunch of of activities and gives them the opportunity to add their own to a Firebase Realtime Datatabse.
+A Telegram Bot, which send users a bunch of of activities and gives them the opportunity to add their own to a Firebase Realtime Datatabse with the `/add` command.
 
 Check it out [here](https://t.me/boredinthehouse_bot).
  
